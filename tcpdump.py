@@ -1,7 +1,7 @@
-#Aluna: Laura Thaís Gomes da Silva Batista - 20192014050017
+
 import struct
 import datetime
-#Aqui eu li o arquivo, me posicionei onde precisava começar a ler e de fato iniciei a leitura
+#Aqui eu li o arquivo. Me posicionei onde precisava começar a ler e de fato iniciei a leitura
 fd = open("cap2.dump", "rb")
 cabArq = fd.seek(24)
 cabPak = fd.read(16)
@@ -15,7 +15,6 @@ qtd = 0
 #começando o tratamento dos dados dos cabeçalhos dos pacotes
 while cabPak != b'':
     cabecalho = struct.unpack("<iiii", cabPak)#desempacotei as informações do cabeçalho para inteiro
-    #print(cabecalho)
     #Criei as listas com as informações que iria usar depois
     timestamp.append(cabecalho[0])
     tamanho.append(cabecalho[2])
